@@ -22,5 +22,8 @@
   },
   "devDependencies": {
     "identicon.js": "^2.3.3"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
