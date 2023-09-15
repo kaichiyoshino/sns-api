@@ -4,9 +4,7 @@ const bcrypt = require("bcrypt");
 const JWT = require("jsonwebtoken");
 const generateIdenticon = require("../utils/generateIdenticon");
 
-const prisma = new PrismaClient({
-  datasources: { db: { url: process.env.DATABASE_URL } },
-});
+const prisma = new PrismaClient();
 
 //新規ユーザー登録用API
 router.post("/register", async (req, res) => {
