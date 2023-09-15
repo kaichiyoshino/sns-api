@@ -2,7 +2,9 @@ const router = require("express").Router();
 const { PrismaClient } = require("@prisma/client");
 const isaAuthenticated = require("../middlewares/isAuthenticated");
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+  datasources: { db: { url: process.env.DATABASE_URL } },
+});
 
 router.get("/find", isaAuthenticated, async (req, res) => {
   try {

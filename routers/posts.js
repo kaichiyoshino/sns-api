@@ -4,7 +4,9 @@ const bcrypt = require("bcrypt");
 const JWT = require("jsonwebtoken");
 const isaAuthenticated = require("../middlewares/isAuthenticated");
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+  datasources: { db: { url: process.env.DATABASE_URL } },
+});
 
 //呟き投稿用API
 router.post("/post", isaAuthenticated, async (req, res) => {
