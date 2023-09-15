@@ -6,7 +6,7 @@ const usersRoute = require("./routers/user");
 require("dotenv").config();
 const cors = require("cors");
 
-const PORT = 5050;
+const PORT = process.env.PORT || 10000;
 
 app.use(cors());
 app.use(express.json());
